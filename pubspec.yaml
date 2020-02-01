@@ -1,0 +1,27 @@
+name: Heroes
+description: Help blood donation efforts
+
+version: 1.0.0
+
+environment:
+  sdk: ">=2.1.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  cupertino_icons: ^0.1.2
+  firebase_auth: ^0.15.4
+  google_sign_in: ^4.1.1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+
+flutter:
+
+  uses-material-design: true
+
+  assets:
+   - assets/

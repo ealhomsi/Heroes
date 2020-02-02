@@ -1,4 +1,4 @@
-package com.example.sign_in_flutter;
+package com.heroes;
 
 import android.os.Bundle;
 import io.flutter.app.FlutterActivity;

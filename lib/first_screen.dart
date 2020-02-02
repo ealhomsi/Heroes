@@ -1,19 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:sign_in_flutter/login_page.dart';
-import 'package:sign_in_flutter/sign_in.dart';
+import 'package:Heroes/login_page.dart';
+import 'login_page.dart';
+import 'sign_in.dart';
 
 class FirstScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        decoration: BoxDecoration(
-          gradient: LinearGradient(
-            begin: Alignment.topRight,
-            end: Alignment.bottomLeft,
-            colors: [Colors.blue[100], Colors.blue[400]],
-          ),
-        ),
+        decoration: BoxDecoration(),
         child: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -37,7 +32,7 @@ class FirstScreen extends StatelessWidget {
               Text(
                 name,
                 style: TextStyle(
-                    fontSize: 25,
+                    fontSize: 20,
                     color: Colors.deepPurple,
                     fontWeight: FontWeight.bold),
               ),
@@ -52,7 +47,7 @@ class FirstScreen extends StatelessWidget {
               Text(
                 email,
                 style: TextStyle(
-                    fontSize: 25,
+                    fontSize: 20,
                     color: Colors.deepPurple,
                     fontWeight: FontWeight.bold),
               ),
@@ -60,14 +55,40 @@ class FirstScreen extends StatelessWidget {
               RaisedButton(
                 onPressed: () {
                   signOutGoogle();
-                  Navigator.of(context).pushAndRemoveUntil(MaterialPageRoute(builder: (context) {return LoginPage();}), ModalRoute.withName('/'));
+                  Navigator.of(context).pushAndRemoveUntil(
+                      MaterialPageRoute(builder: (context) {
+                    return LoginPage();
+                  }), ModalRoute.withName('/'));
                 },
                 color: Colors.deepPurple,
                 child: Padding(
-                  padding: const EdgeInsets.all(8.0),
+                  padding: const EdgeInsets.all(10.0),
                   child: Text(
                     'Sign Out',
-                    style: TextStyle(fontSize: 25, color: Colors.white),
+                    style: TextStyle(fontSize: 20, color: Colors.white),
+                  ),
+                ),
+                elevation: 5,
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(40)),
+              ),
+              SizedBox(height: 40),
+              RaisedButton(
+                onPressed: () {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (context) {
+                        return LoginPage();
+                      },
+                    ),
+                  );
+                },
+                color: Colors.deepPurple,
+                child: Padding(
+                  padding: const EdgeInsets.all(10.0),
+                  child: Text(
+                    'Continue',
+                    style: TextStyle(fontSize: 20, color: Colors.white),
                   ),
                 ),
                 elevation: 5,

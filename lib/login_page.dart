@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:sign_in_flutter/sign_in.dart';
+import 'sign_in.dart';
 
 import 'first_screen.dart';
 
@@ -19,8 +19,18 @@ class _LoginPageState extends State<LoginPage> {
             mainAxisSize: MainAxisSize.max,
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              FlutterLogo(size: 150),
-              SizedBox(height: 50),
+              Image(image: AssetImage("assets/logo.png"), height: 200.0),
+              Padding(
+                padding: const EdgeInsets.only(left: 10),
+                child: Text(
+                  'Heroes',
+                  style: TextStyle(
+                    fontSize: 50,
+                    color: Color.fromARGB(255, 20, 20, 20),
+                  ),
+                ),
+              ),
+              SizedBox(height: 100),
               _signInButton(),
             ],
           ),
@@ -52,14 +62,14 @@ class _LoginPageState extends State<LoginPage> {
           mainAxisSize: MainAxisSize.min,
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Image(image: AssetImage("assets/logo.png"), height: 35.0),
+            Image(image: AssetImage("assets/google_logo.png"), height: 20.0),
             Padding(
               padding: const EdgeInsets.only(left: 10),
               child: Text(
                 'Sign in with Google',
                 style: TextStyle(
                   fontSize: 20,
-                  color: Colors.grey,
+                  color: Color.fromARGB(255, 90, 90, 90),
                 ),
               ),
             )
